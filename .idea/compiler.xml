@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud-bill8001" />
+        <module name="cloud-passenger8002" />
+        <module name="cloud-gateway80" />
+        <module name="cloud-eureka9000" />
+        <module name="cloud-api-common" />
+        <module name="cloud-driver8003" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SpringCloudRiding" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloud-api-common" options="-parameters" />
+      <module name="cloud-bill8001" options="-parameters" />
+      <module name="cloud-driver8003" options="-parameters" />
+      <module name="cloud-eureka9000" options="-parameters" />
+      <module name="cloud-gateway80" options="-parameters" />
+      <module name="cloud-passenger8002" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.riding.springcloud.dao.BillDao">
+<insert id="saveBill" parameterType="com.riding.springcloud.entity.Bill" useGeneratedKeys="true" keyProperty="id">
+    insert into bill(price,passenger_id,driver_id,arrived,payed) values(#{price},#{passengerId},#{driverId},#{arrived},#{payed});
+</insert>
+
+<update id="updateArrived">
+    UPDATE `bill` SET `Arrived` = 1 WHERE `id` = #{billId}
+</update>
+
+    <update id="updatePayed">
+        UPDATE `bill` SET `Payed` = 1 WHERE `id` = #{billId}
+    </update>
+
+<select id="getBillsByPassengerId" resultType="bill">
+    SELECT * FROM `bill` WHERE `passenger_id`=#{id}
+</select>
+</mapper>
+

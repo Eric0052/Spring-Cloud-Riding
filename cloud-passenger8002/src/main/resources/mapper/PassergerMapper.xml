@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.riding.springcloud.dao.PassengerDao">
+  <select id="getAvailableDrivers" resultType="driver">
+      SELECT * FROM `driver` WHERE `available` = 0
+  </select>
+<select id="getBillById" resultType="bill">
+    SELECT `price`,`passenger_id` AS "passengerId",`driver_id` AS "driverId" FROM `bill` WHERE `id` = #{billId}
+</select>
+<update id="updateMoneyByPassengerId" >
+    UPDATE `passenger` SET `money` = `money`-#{money} WHERE `id` = #{passengerId}
+</update>
+    <update id="updateMoneyByDriverId" >
+    UPDATE `driver` SET `money` = `money`+#{money} WHERE `id` = #{driverId}
+    </update>
+
+</mapper>
+
