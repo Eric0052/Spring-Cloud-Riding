@@ -28,8 +28,8 @@ public class PassengerServiceImpl implements PassengerService {
 
         Integer result1 = passengerDao.updateMoneyByPassengerId(bill.getPassengerId(),bill.getPrice());
         Integer result2 = passengerDao.updateMoneyByDriverId(bill.getDriverId(),bill.getPrice());
-        System.out.println("result1="+result1);
-        System.out.println("result2="+result2);
+//        System.out.println("result1="+result1);
+//        System.out.println("result2="+result2);
         if(result1>0&&result2>0){
             return 1;
         }

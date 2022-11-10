@@ -4,7 +4,7 @@
 
 <mapper namespace="com.riding.springcloud.dao.PassengerDao">
   <select id="getAvailableDrivers" resultType="driver">
-      SELECT * FROM `driver` WHERE `available` = 0
+      SELECT `name`,`plate_number`AS "plateNumber",`phone_number`AS"phoneNumber" FROM `driver` WHERE `available` = 0
   </select>
 <select id="getBillById" resultType="bill">
     SELECT `price`,`passenger_id` AS "passengerId",`driver_id` AS "driverId" FROM `bill` WHERE `id` = #{billId}

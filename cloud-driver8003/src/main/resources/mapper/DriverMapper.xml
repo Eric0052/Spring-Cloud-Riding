@@ -7,7 +7,7 @@
       UPDATE `driver` SET `available` = #{value} WHERE `id` = #{id}
   </update>
     <select id="getDriverById" resultType="driver">
-        SELECT * FROM `driver` WHERE `id` = #{id}
+        SELECT `id`,`name`,`plate_number`AS "plateNumber",`phone_number`AS"phoneNumber",`money`,`available` FROM `driver` WHERE `id` = #{id}
     </select>
 
 
